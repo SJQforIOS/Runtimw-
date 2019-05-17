@@ -1,0 +1,25 @@
+//
+//  PrefixHeader.pch
+//  SendMsgDemo
+//
+//  Created by SJQ on 2018/1/18.
+//  Copyright © 2018年 孙佳其. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#define UIColorFromRGBA(rgbValue, alphaValue) [UIColor \
+colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 \
+green:((float)((rgbValue & 0x00FF00) >> 8))/255.0 \
+blue:((float)(rgbValue & 0x0000FF))/255.0 \
+alpha:alphaValue]
+#define UIColorFromRGB(rgbValue)              UIColorFromRGBA(rgbValue, 1.0)
+
+#define UIScreenWidth               ([UIScreen mainScreen].bounds.size.width)
+#define UIScreenHeight              ([UIScreen mainScreen].bounds.size.height)
+
+#define IphoneX ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1125, 2436), [[UIScreen mainScreen] currentMode].size) : NO)
+
+
+#endif /* PrefixHeader_pch */
